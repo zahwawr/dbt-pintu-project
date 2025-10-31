@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  # ===========================
+  # Dimension tables
+  # ===========================
+  - name: dim_users
+    description: "User dimension table"
+    columns:
+      - name: user_id
+        description: "Primary key for user"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_tokens
+    description: "Token dimension table"
+    columns:
+      - name: token_id
+        description: "Primary key for token"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_trade_sides
+    description: "Trade sides dimension table"
+    columns:
+      - name: side_id
+        description: "Primary key for trade side"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_trade_status
+    description: "Trade status dimension table"
+    columns:
+      - name: status_id
+        description: "Primary key for trade status"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_p2p_transfers_status
+    description: "P2P transfer status dimension table"
+    columns:
+      - name: status_id
+        description: "Primary key for P2P transfer status"
+        tests:
+          - not_null
+          - unique
+
+  # ===========================
+  # Fact tables
+  # ===========================
+  - name: fact_trades
+    description: "Fact table for trades"
+    columns:
+      - name: trade_id
+        description: "Primary key for each trade"
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_p2p_transfers
+    description: "Fact table for P2P transfers"
+    columns:
+      - name: transfer_id
+        description: "Primary key for each transfer"
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,60 @@
+version: 2
+
+seeds:
+  - name: raw_users
+    columns:
+      - name: user_id
+        data_type: string
+      - name: region
+        data_type: string
+      - name: signup_date
+        data_type: date
+        
+  - name: raw_trades
+    columns:
+      - name: trade_id
+        data_type: string
+      - name: user_id
+        data_type: string
+      - name: token_id
+        data_type: string
+      - name: side
+        data_type: string
+      - name: price_usd
+        data_type: numeric
+      - name: quantity
+        data_type: bignumeric
+      - name: status
+        data_type: string
+      - name: trade_created_time
+        data_type: timestamp
+      - name: trade_updated_time
+        data_type: timestamp
+        
+  - name: raw_p2p_transfers
+    columns:
+      - name: transfer_id
+        data_type: string
+      - name: sender_id
+        data_type: string
+      - name: receiver_id
+        data_type: string
+      - name: token_id
+        data_type: string
+      - name: amount
+        data_type: bignumeric
+      - name: status
+        data_type: string
+      - name: transfer_created_time
+        data_type: timestamp
+      - name: transfer_updated_time
+        data_type: timestamp
+
+  - name: raw_tokens
+    columns:
+      - name: token_id
+        data_type: string
+      - name: token_name
+        data_type: string
+      - name: category
+        data_type: string

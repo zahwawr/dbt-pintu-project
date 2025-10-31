@@ -1,0 +1,10 @@
+pintu_dbt:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: D:\dbt-project\pintu_dbt\dbt-key.json
+      project: data-analyst-test-404802
+      dataset: pintu
+      location: US
+  target: dev

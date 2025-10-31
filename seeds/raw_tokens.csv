@@ -1,0 +1,11 @@
+token_id,token_name,category
+ADA,Cardano,Layer-1
+BNB,BNB,Layer-1
+BTC,Bitcoin,Layer-1
+DOGE,Dogecoin,Meme Coin
+ETH,Ethereum,Layer-1
+PEPE,Pepe,Meme Coin
+SHIB,Shiba Inu,Meme Coin
+SOL,Solana,Layer-1
+USDT,Tether,Stablecoin
+XRP,XRP,Layer-1

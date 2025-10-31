@@ -1,0 +1,62 @@
+version: 2
+
+
+models:
+  - name: mart_region_cohort
+    description: "Region cohort table"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - region
+              - first_month
+              - diff
+  - name: mart_p2p_transfers_details
+    description: "Combined transfers detail mart"
+    columns:
+      - name: transfer_id
+        description: "Primary key for transfers"
+        tests:
+          - not_null
+          - unique
+  - name: mart_trade_details
+    description: "Combined trade detail mart"
+    columns:
+      - name: trade_id
+        description: "Primary key for trade"
+        tests:
+          - not_null
+          - unique
+  - name: mart_token_category_cohort
+    description: "Category cohort table"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - category
+              - first_month
+              - diff
+  - name: mart_trade_pareto_users
+    description: "Pareto for trade users monthly"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - month
+              - user_id
+  - name: mart_trade_token_summary
+    description: "Summary trade token all time"
+    columns:
+        - name: token_id
+          description: "Primary key for token"
+          tests:
+            - not_null
+            - unique
+  - name: mart_users_journey
+    description: "Summary for users activity journey"
+    columns:
+        - name: user_id
+          description: "Primary key for token"
+          tests:
+            - not_null
+            - unique
